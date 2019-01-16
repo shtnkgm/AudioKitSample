@@ -173,7 +173,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AudioKitSample/Pods-AudioKitSample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AudioKitSample/Pods-AudioKitSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Former/Former.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
@@ -188,7 +188,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudioKitSample/Pods-AudioKitSample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AudioKitSample/Pods-AudioKitSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5281385A55B6F4ED15ABD1EE /* [CP] Check Pods Manifest.lock */ = {

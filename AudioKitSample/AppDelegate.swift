@@ -9,6 +9,10 @@
 import UIKit
 import Former
 
+/*
+ AudioKitSample[21524:4207235] [access] This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSMicrophoneUsageDescription key with a string value explaining to the user how the app uses this data.
+ */
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -42,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MyFormer.makeLabelRow(title: "Visualization")  { [weak self] in self?.push(self?.makeVisualizationViewController()) }
             ])
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
-        return FormViewController(name: "List", sectionFormers: [section])
+        return FormViewController(title: "List", sectionFormers: [section])
     }
     
     private func makeOscillatorViewController() -> FormViewController {
@@ -53,14 +57,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MyFormer.makeSliderRow(title: "rampDuration") { _ in }
             ])
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
-        return FormViewController(name: "Oscillator", sectionFormers: [section])
+        return FormViewController(title: "Oscillator", sectionFormers: [section])
     }
     
     private func makePianoViewController() -> FormViewController {
         let rows = Note.allCases.map { MyFormer.makeLabelRow(title: $0.rawValue) { } }
         let section = SectionFormer(rowFormers: rows)
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
-        return FormViewController(name: "Piano", sectionFormers: [section])
+        return FormViewController(title: "Piano", sectionFormers: [section])
     }
     
     private func makeVocalViewController() -> FormViewController {
@@ -75,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MyFormer.makeSliderRow(title: "nasality") { _ in }
             ])
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
-        return FormViewController(name: "Vocal", sectionFormers: [section])
+        return FormViewController(title: "Vocal", sectionFormers: [section])
     }
     
     private func makeTunerViewController() -> UIViewController {
@@ -83,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func makeVisualizationViewController() -> UIViewController {
-        return VisualizationViewController(name: "Visualization")
+        return VisualizationViewController(title: "Visualization")
     }
 }
 

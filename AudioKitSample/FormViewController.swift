@@ -13,13 +13,11 @@ import SnapKit
 final class FormViewController: UIViewController {
     private let tableView = UITableView(frame: .zero, style: .grouped)
     private lazy var former = Former(tableView: tableView)
-    private let sectionFormers: [SectionFormer]
-    private let name: String
     
-    init(name: String, sectionFormers: [SectionFormer]) {
-        self.name = name
-        self.sectionFormers = sectionFormers
+    init(title: String, sectionFormers: [SectionFormer]) {
         super.init(nibName: nil, bundle: nil)
+        self.title = title
+        former.add(sectionFormers: sectionFormers)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,16 +27,10 @@ final class FormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        setupFormer()
-        title = name
     }
     
     private func setupLayout() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
-    }
-    
-    private func setupFormer() {
-        former.add(sectionFormers: sectionFormers)
     }
 }
