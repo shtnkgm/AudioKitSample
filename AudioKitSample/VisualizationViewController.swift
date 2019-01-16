@@ -49,7 +49,7 @@ final class VisualizationViewController: UIViewController {
     
     func setupNodeOutputPlot() {
         let nodeOutputPlot = AKNodeOutputPlot(microphone, frame: .zero)
-        nodeOutputPlot.plotType = .rolling
+        nodeOutputPlot.plotType = .buffer
         nodeOutputPlot.shouldFill = true
         nodeOutputPlot.shouldMirror = true
         nodeOutputPlot.color = .red
