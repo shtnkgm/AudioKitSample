@@ -7,7 +7,7 @@ target 'AudioKitSample' do
   
   pod 'Then'
   pod 'AudioKit'
-  pod 'EZAudio'
+  pod 'AudioKit/UI'
   pod 'SnapKit'
   pod 'Former'
 

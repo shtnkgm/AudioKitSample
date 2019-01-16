@@ -38,7 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MyFormer.makeLabelRow(title: "Oscillator") { [weak self] in self?.push(self?.makeOscillatorViewController()) },
             MyFormer.makeLabelRow(title: "Piano") { [weak self] in self?.push(self?.makePianoViewController()) },
             MyFormer.makeLabelRow(title: "Vocal") { [weak self] in self?.push(self?.makeVocalViewController()) },
-            MyFormer.makeLabelRow(title: "Tuner") { [weak self] in self?.push(self?.makeTunerViewController()) }
+            MyFormer.makeLabelRow(title: "Tuner") { [weak self] in self?.push(self?.makeTunerViewController()) },
+            MyFormer.makeLabelRow(title: "Visualization")  { [weak self] in self?.push(self?.makeVisualizationViewController()) }
             ])
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
         return FormViewController(name: "List", sectionFormers: [section])
@@ -79,6 +80,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func makeTunerViewController() -> UIViewController {
         return TunerViewController(name: "Tuner")
+    }
+    
+    private func makeVisualizationViewController() -> UIViewController {
+        return VisualizationViewController(name: "Visualization")
     }
 }
 
