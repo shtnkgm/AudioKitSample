@@ -37,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let section = SectionFormer(rowFormers: [
             MyFormer.makeLabelRow(title: "Oscillator") { [weak self] in self?.push(self?.makeOscillatorViewController()) },
             MyFormer.makeLabelRow(title: "Piano") { [weak self] in self?.push(self?.makePianoViewController()) },
-            MyFormer.makeLabelRow(title: "Vocal") { [weak self] in self?.push(self?.makeVocalViewController()) }
+            MyFormer.makeLabelRow(title: "Vocal") { [weak self] in self?.push(self?.makeVocalViewController()) },
+            MyFormer.makeLabelRow(title: "Tuner") { [weak self] in self?.push(self?.makeTunerViewController()) }
             ])
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
         return FormViewController(name: "List", sectionFormers: [section])
@@ -74,6 +75,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ])
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
         return FormViewController(name: "Vocal", sectionFormers: [section])
+    }
+    
+    private func makeTunerViewController() -> UIViewController {
+        return TunerViewController(name: "Tuner")
     }
 }
 

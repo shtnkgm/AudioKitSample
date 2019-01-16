@@ -14,6 +14,7 @@
 		DA374C0021EF1CCD00178677 /* Former.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA374BFF21EF1CCD00178677 /* Former.swift */; };
 		DA374C0621EF23C600178677 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA374C0521EF23C600178677 /* FormViewController.swift */; };
 		DA374C0821EF293900178677 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA374C0721EF293900178677 /* Note.swift */; };
+		DA374C0A21EF2E2000178677 /* TunerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA374C0921EF2E2000178677 /* TunerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DA374BFF21EF1CCD00178677 /* Former.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Former.swift; sourceTree = "<group>"; };
 		DA374C0521EF23C600178677 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		DA374C0721EF293900178677 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		DA374C0921EF2E2000178677 /* TunerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				970DBE3121EC849E0032B792 /* AppDelegate.swift */,
 				DA374BFF21EF1CCD00178677 /* Former.swift */,
 				DA374C0521EF23C600178677 /* FormViewController.swift */,
+				DA374C0921EF2E2000178677 /* TunerViewController.swift */,
 				DA374C0721EF293900178677 /* Note.swift */,
 				970DBE3821EC84A00032B792 /* Assets.xcassets */,
 				970DBE3A21EC84A00032B792 /* LaunchScreen.storyboard */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA374C0A21EF2E2000178677 /* TunerViewController.swift in Sources */,
 				DA374C0021EF1CCD00178677 /* Former.swift in Sources */,
 				DA374C0621EF23C600178677 /* FormViewController.swift in Sources */,
 				970DBE3221EC849E0032B792 /* AppDelegate.swift in Sources */,
