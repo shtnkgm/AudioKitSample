@@ -36,7 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func makeListViewController() -> FormViewController {
         let section = SectionFormer(rowFormers: [
             MyFormer.makeLabelRow(title: "Oscillator") { [weak self] in self?.push(self?.makeOscillatorViewController()) },
-            MyFormer.makeLabelRow(title: "Piano") { [weak self] in self?.push(self?.makePianoViewController()) }
+            MyFormer.makeLabelRow(title: "Piano") { [weak self] in self?.push(self?.makePianoViewController()) },
+            MyFormer.makeLabelRow(title: "Vocal") { [weak self] in self?.push(self?.makeVocalViewController()) }
             ])
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
         return FormViewController(name: "List", sectionFormers: [section])
@@ -58,6 +59,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let section = SectionFormer(rowFormers: rows)
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
         return FormViewController(name: "Piano", sectionFormers: [section])
+    }
+    
+    private func makeVocalViewController() -> FormViewController {
+        let section = SectionFormer(rowFormers: [
+            MyFormer.makeSwitchRow(title: "enable") { _ in },
+            MyFormer.makeSliderRow(title: "frequency", min: 0, max: 1000) { _ in },
+            MyFormer.makeSliderRow(title: "amplitude") { _ in },
+            MyFormer.makeSliderRow(title: "rampDuration") { _ in },
+            MyFormer.makeSliderRow(title: "tonguePosition") { _ in },
+            MyFormer.makeSliderRow(title: "tongueDiameter") { _ in },
+            MyFormer.makeSliderRow(title: "tenseness") { _ in },
+            MyFormer.makeSliderRow(title: "nasality") { _ in }
+            ])
+            .set(headerViewFormer: MyFormer.makeHeader(title: ""))
+        return FormViewController(name: "Vocal", sectionFormers: [section])
     }
 }
 
