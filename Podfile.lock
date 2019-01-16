@@ -1,9 +1,9 @@
 PODS:
-  - AudioKit (4.5.5):
-    - AudioKit/Core (= 4.5.5)
-    - AudioKit/UI (= 4.5.5)
-  - AudioKit/Core (4.5.5)
-  - AudioKit/UI (4.5.5):
+  - AudioKit (4.5.6):
+    - AudioKit/Core (= 4.5.6)
+    - AudioKit/UI (= 4.5.6)
+  - AudioKit/Core (4.5.6)
+  - AudioKit/UI (4.5.6):
     - AudioKit/Core
   - Former (1.7.0)
   - SnapKit (4.2.0)
@@ -24,7 +24,7 @@ SPEC REPOS:
     - Then
 
 SPEC CHECKSUMS:
-  AudioKit: fa163632454ff463d5f02c479e4c1fb99f2c9d44
+  AudioKit: 84f5a444902a74ac32cfe8488e72782792ff2edc
   Former: f78c0c28b84aadc4da3bf29e97220c8db188048d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
