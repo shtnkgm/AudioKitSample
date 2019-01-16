@@ -17,7 +17,7 @@ enum Note: String {
     case ラ
     case シ
     
-    var frequency: Float {
+    var frequency: Double {
         switch self {
         case .ド: return 261.626
         case .レ: return 293.665
@@ -29,11 +29,11 @@ enum Note: String {
         }
     }
     
-    var lowFrequency: Float {
+    var lowFrequency: Double {
         return frequency / 2.0
     }
     
-    var highFrequency: Float {
+    var highFrequency: Double {
         return frequency * 2.0
     }
 }

@@ -13,7 +13,7 @@ import SnapKit
 import AudioKit
 import AudioKitUI
 
-final class VisualizationViewController: UIViewController {
+class VisualizationViewController: UIViewController {
     private let microphone = AKMicrophone()
     
     private let tableView = UITableView(frame: .zero, style: .grouped)

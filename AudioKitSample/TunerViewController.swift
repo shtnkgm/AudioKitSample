@@ -8,8 +8,9 @@
 
 import UIKit
 import Then
+import AudioKit
 
-final class TunerViewController: UIViewController {
+class TunerViewController: UIViewController {
     private let label = UILabel().then {
         $0.text = "-"
         $0.textAlignment = .center
@@ -32,6 +33,11 @@ final class TunerViewController: UIViewController {
         setupLayout()
         title = name
         view.backgroundColor = .white
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        try? AudioKit.stop()
     }
     
     private func setupLayout() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Former
+import AudioKit
 
 /*
  AudioKitSample[21524:4207235] [access] This app has crashed because it attempted to access privacy-sensitive data without a usage description.  The app's Info.plist must contain an NSMicrophoneUsageDescription key with a string value explaining to the user how the app uses this data.
@@ -37,10 +38,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    private let oscillatorController = OscillatorController()
+    private let pianoController = PianoController()
     private func makeListViewController() -> FormViewController {
         let section = SectionFormer(rowFormers: [
-            MyFormer.makeLabelRow(title: "Oscillator") { [weak self] in self?.push(self?.makeOscillatorViewController()) },
-            MyFormer.makeLabelRow(title: "Piano") { [weak self] in self?.push(self?.makePianoViewController()) },
+            MyFormer.makeLabelRow(title: "Oscillator") { [weak self] in
+                guard let self = self else { return }
+                AudioKit.output = self.oscillatorController.oscillator
+                self.startAudioKit()
+                self.push(self.oscillatorController.makeViewController())
+            },
+            MyFormer.makeLabelRow(title: "Piano") { [weak self] in
+                guard let self = self else { return }
+                AudioKit.output = self.pianoController.piano
+                self.startAudioKit()
+                self.push(self.pianoController.makeViewController())
+            },
             MyFormer.makeLabelRow(title: "Vocal") { [weak self] in self?.push(self?.makeVocalViewController()) },
             MyFormer.makeLabelRow(title: "Tuner") { [weak self] in self?.push(self?.makeTunerViewController()) },
             MyFormer.makeLabelRow(title: "Visualization")  { [weak self] in self?.push(self?.makeVisualizationViewController()) }
@@ -49,27 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return FormViewController(title: "List", sectionFormers: [section])
     }
     
-    private func makeOscillatorViewController() -> FormViewController {
-        let section = SectionFormer(rowFormers: [
-            MyFormer.makeSwitchRow(title: "enable") { _ in },
-            MyFormer.makeSliderRow(title: "frequency", min: 0, max: 1000) { _ in },
-            MyFormer.makeSliderRow(title: "amplitude") { _ in },
-            MyFormer.makeSliderRow(title: "rampDuration") { _ in }
-            ])
-            .set(headerViewFormer: MyFormer.makeHeader(title: ""))
-        return FormViewController(title: "Oscillator", sectionFormers: [section])
-    }
-    
-    private func makePianoViewController() -> FormViewController {
-        let rows = Note.allCases.map { MyFormer.makeLabelRow(title: $0.rawValue) { } }
-        let section = SectionFormer(rowFormers: rows)
-            .set(headerViewFormer: MyFormer.makeHeader(title: ""))
-        return FormViewController(title: "Piano", sectionFormers: [section])
-    }
-    
     private func makeVocalViewController() -> FormViewController {
         let section = SectionFormer(rowFormers: [
-            MyFormer.makeSwitchRow(title: "enable") { _ in },
+            MyFormer.makeSwitchRow(title: "start") { _ in },
             MyFormer.makeSliderRow(title: "frequency", min: 0, max: 1000) { _ in },
             MyFormer.makeSliderRow(title: "amplitude") { _ in },
             MyFormer.makeSliderRow(title: "rampDuration") { _ in },
@@ -88,6 +83,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func makeVisualizationViewController() -> UIViewController {
         return VisualizationViewController(title: "Visualization")
+    }
+    
+    private func startAudioKit() {
+        do {
+            try AudioKit.start()
+        } catch {
+            print(error)
+        }
     }
 }
 

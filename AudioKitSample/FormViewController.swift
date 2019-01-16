@@ -9,8 +9,9 @@
 import UIKit
 import Former
 import SnapKit
+import AudioKit
 
-final class FormViewController: UIViewController {
+class FormViewController: UIViewController {
     private let tableView = UITableView(frame: .zero, style: .grouped)
     private lazy var former = Former(tableView: tableView)
     
@@ -27,6 +28,11 @@ final class FormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        try? AudioKit.stop()
     }
     
     private func setupLayout() {
