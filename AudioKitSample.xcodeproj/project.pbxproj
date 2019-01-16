@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		970DBE3221EC849E0032B792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DBE3121EC849E0032B792 /* AppDelegate.swift */; };
-		970DBE3421EC849E0032B792 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DBE3321EC849E0032B792 /* ViewController.swift */; };
+		970DBE3421EC849E0032B792 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DBE3321EC849E0032B792 /* ListViewController.swift */; };
 		970DBE3721EC849E0032B792 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970DBE3521EC849E0032B792 /* Main.storyboard */; };
 		970DBE3921EC84A00032B792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970DBE3821EC84A00032B792 /* Assets.xcassets */; };
 		970DBE3C21EC84A00032B792 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970DBE3A21EC84A00032B792 /* LaunchScreen.storyboard */; };
 		C6ACCA31C7D1C9D957690F5C /* Pods_AudioKitSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0010E6C95C554959ECC087D6 /* Pods_AudioKitSample.framework */; };
+		DA374C0021EF1CCD00178677 /* Former.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA374BFF21EF1CCD00178677 /* Former.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +21,13 @@
 		6AAB66F28F4DC2FA8E5A947A /* Pods-AudioKitSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioKitSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioKitSample/Pods-AudioKitSample.release.xcconfig"; sourceTree = "<group>"; };
 		970DBE2E21EC849E0032B792 /* AudioKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970DBE3121EC849E0032B792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		970DBE3321EC849E0032B792 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		970DBE3321EC849E0032B792 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		970DBE3621EC849E0032B792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		970DBE3821EC84A00032B792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		970DBE3B21EC84A00032B792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		970DBE3D21EC84A00032B792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B4AB5424CBB455787FD7C70 /* Pods-AudioKitSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioKitSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioKitSample/Pods-AudioKitSample.debug.xcconfig"; sourceTree = "<group>"; };
+		DA374BFF21EF1CCD00178677 /* Former.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Former.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				970DBE3121EC849E0032B792 /* AppDelegate.swift */,
-				970DBE3321EC849E0032B792 /* ViewController.swift */,
+				970DBE3321EC849E0032B792 /* ListViewController.swift */,
+				DA374BFF21EF1CCD00178677 /* Former.swift */,
 				970DBE3521EC849E0032B792 /* Main.storyboard */,
 				970DBE3821EC84A00032B792 /* Assets.xcassets */,
 				970DBE3A21EC84A00032B792 /* LaunchScreen.storyboard */,
@@ -216,7 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				970DBE3421EC849E0032B792 /* ViewController.swift in Sources */,
+				970DBE3421EC849E0032B792 /* ListViewController.swift in Sources */,
+				DA374C0021EF1CCD00178677 /* Former.swift in Sources */,
 				970DBE3221EC849E0032B792 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
