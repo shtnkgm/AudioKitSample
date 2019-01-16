@@ -12,8 +12,15 @@ import AudioKit
 import AudioKitUI
 
 final class VisualizationViewController: UIViewController {
-    let audioPlot = EZAudioPlot()
-    let microphone = AKMicrophone()
+    private let audioPlot = EZAudioPlot()
+    private let microphone = AKMicrophone()
+    
+    private lazy var nodeOutputPlot = AKNodeOutputPlot(microphone, frame: .zero).then {
+        $0.plotType = .buffer
+        $0.shouldFill = true
+        $0.shouldMirror = true
+        $0.color = .red
+    }
     
     private let name: String
     
@@ -30,7 +37,6 @@ final class VisualizationViewController: UIViewController {
         super.viewDidLoad()
         setupLayout()
         setupAudioKit()
-        setupNodeOutputPlot()
         title = name
         view.backgroundColor = .white
     }
@@ -43,22 +49,15 @@ final class VisualizationViewController: UIViewController {
     private func setupLayout() {
         view.addSubview(audioPlot)
         audioPlot.snp.makeConstraints { $0.edges.equalToSuperview() }
+        
+        audioPlot.addSubview(nodeOutputPlot)
+        nodeOutputPlot.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
     private func setupAudioKit() {
         let frequencyTracker = AKFrequencyTracker(microphone)
-        let booster = AKBooster(frequencyTracker, gain: 0)
+        let booster = AKBooster(frequencyTracker)
         AudioKit.output = booster
         try? AudioKit.start()
-    }
-    
-    func setupNodeOutputPlot() {
-        let nodeOutputPlot = AKNodeOutputPlot(microphone, frame: .zero)
-        nodeOutputPlot.plotType = .buffer
-        nodeOutputPlot.shouldFill = true
-        nodeOutputPlot.shouldMirror = true
-        nodeOutputPlot.color = .red
-        audioPlot.addSubview(nodeOutputPlot)
-        nodeOutputPlot.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
 }
