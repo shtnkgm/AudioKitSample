@@ -35,7 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func makeListViewController() -> FormViewController {
         let section = SectionFormer(rowFormers: [
-            MyFormer.makeLabelRow(title: "Oscillator") { [weak self] in self?.push(self?.makeOscillatorViewController()) }
+            MyFormer.makeLabelRow(title: "Oscillator") { [weak self] in self?.push(self?.makeOscillatorViewController()) },
+            MyFormer.makeLabelRow(title: "Piano") { [weak self] in self?.push(self?.makePianoViewController()) }
             ])
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
         return FormViewController(name: "List", sectionFormers: [section])
@@ -50,6 +51,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ])
             .set(headerViewFormer: MyFormer.makeHeader(title: ""))
         return FormViewController(name: "Oscillator", sectionFormers: [section])
+    }
+    
+    private func makePianoViewController() -> FormViewController {
+        let rows = Note.allCases.map { MyFormer.makeLabelRow(title: $0.rawValue) { } }
+        let section = SectionFormer(rowFormers: rows)
+            .set(headerViewFormer: MyFormer.makeHeader(title: ""))
+        return FormViewController(name: "Piano", sectionFormers: [section])
     }
 }
 
