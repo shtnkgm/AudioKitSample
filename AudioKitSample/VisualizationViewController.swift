@@ -35,6 +35,11 @@ final class VisualizationViewController: UIViewController {
         view.backgroundColor = .white
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        try? AudioKit.stop()
+    }
+    
     private func setupLayout() {
         view.addSubview(audioPlot)
         audioPlot.snp.makeConstraints { $0.edges.equalToSuperview() }
